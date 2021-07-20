@@ -5,6 +5,7 @@ on: [push]
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: web-app-04-cluster    # Add your cluster name here.
+  GKE_SERVER: web-app-04-server    # Add your cluster name here.
   GKE_ZONE: asia-northeast1-a   # Add your cluster zone here.
   DEPLOYMENT_NAME: gke-test # Add your deployment name here.
   IMAGE: static-site
@@ -94,4 +95,6 @@ jobs:
 
     - name: Deploy
       run: |-
-        kubectl apply -f deployment.yaml
+        # kubectl apply -f deployment.yaml
+        kubectl create deployment $GKE_SERVER  --image=gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+        kubectl expose deployment $GKE_SERVER --type LoadBalancer --port 80 --target-port 8080
