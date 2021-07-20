@@ -39,6 +39,7 @@ jobs:
           pytest
 
   setup-build-publish-deploy:
+    needs: test
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
     steps:
@@ -93,7 +94,7 @@ jobs:
 
     - name: Deploy
       run: |-
-        ls \  
+        ls . \  
         ls ../../ \
         pwd \
         kubectl apply -f ../../deployment.yaml
