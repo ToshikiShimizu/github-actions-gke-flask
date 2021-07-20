@@ -92,7 +92,9 @@ jobs:
     #     ./kustomize build . | kubectl apply -f -
     #     kubectl rollout status deployment/$DEPLOYMENT_NAME
     #     kubectl get services -o wide
-
+    - name: Install kubectl
+      uses: azure/setup-kubectl@v1
+      
     - name: Deploy
       run: |-
         # kubectl apply -f deployment.yaml
