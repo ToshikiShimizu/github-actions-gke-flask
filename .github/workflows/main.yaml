@@ -92,8 +92,8 @@ jobs:
     #     kubectl get services -o wide
 
     - name: Deploy
-    run: |-
-      ls \
-      ls ../../ \
-      pwd \
-      kubectl apply -f ../../deployment.yaml
+      run: |-
+        ls \  
+        ls ../../ \
+        pwd \
+        kubectl apply -f ../../deployment.yaml
