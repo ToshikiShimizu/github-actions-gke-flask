@@ -7,14 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello
+      app: web-app-04
   template:
     metadata:
       labels:
-        app: hello
+        app: web-app-04
     spec:
       containers:
-      - name: hello-app
+      - name: web-app-04-container
         # Replace $LOCATION with your Artifact Registry location (e.g., us-west1).
         # Replace $GCLOUD_PROJECT with your project ID.
         # image: $LOCATION-docker.pkg.dev/$GCLOUD_PROJECT/hello-repo/helloworld-gke:latest
