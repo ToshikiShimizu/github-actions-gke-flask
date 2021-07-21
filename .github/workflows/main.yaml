@@ -95,6 +95,7 @@ jobs:
 
     - name: Deploy
       run: |-
-        # kubectl apply -f deployment.yaml
-        kubectl create deployment $GKE_SERVER  --image=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-        kubectl expose deployment $GKE_SERVER --type LoadBalancer --port 80 --target-port 8080
+        kubectl get deployments
+        # # kubectl apply -f deployment.yaml
+        # kubectl create deployment $GKE_SERVER  --image=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+        # kubectl expose deployment $GKE_SERVER --type LoadBalancer --port 80 --target-port 8080
