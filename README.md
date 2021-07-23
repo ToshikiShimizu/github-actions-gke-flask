@@ -6,12 +6,16 @@ GKEにFlaskで作成したWebアプリをデプロイするための、サンプ
 
 ## 使い方
 
+GCPのGKEクラスタを作成してください。
+
 `GitHub - Settings - Secrets`の`Actions Secret`で下記を設定してください。
 
 - GKE_PROJECT
 - GKE_SA_KEY
 
 また、サンプルコードではアプリ名を`web-app-04`としているので、適宜修正してください。
+
+コードをpushすることでワークフローが実行されます。
 
 ## 説明
 
