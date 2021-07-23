@@ -11,6 +11,7 @@ env:
   IMAGE: static-site
 
 jobs:
+  # flake8
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -31,6 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
+    # pytest
     needs: lint
     runs-on: ubuntu-latest
     strategy:
